@@ -2,7 +2,13 @@
   "name": "mn-core",
   "version": "1.0.0",
   "description": "core package",
-  "main": "dist/index.js",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "browser": "./dist/index.umd.js",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "ts-node src/index.ts"
   },
@@ -10,6 +16,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "utils": "workspace:^1.0.0"
+    "mn-utils": "workspace:^1.0.0"
   }
 }
