@@ -37,18 +37,15 @@ async function buildPackage(target: string) {
             dir: resolve(packagesPath, target, 'dist'),
           },
           {
-            format: 'esm',
+            format: 'es',
             dir: resolve(packagesPath, target, 'dist'),
             entryFileNames: basename(packageJson.module),
           },
           {
-            format: 'umd',
+            format: 'iife',
             dir: resolve(packagesPath, target, 'dist'),
             name: buildOptionName,
             entryFileNames: basename(packageJson.browser),
-            globals: {
-              'mn-utils': buildOptionName,
-            },
           },
         ],
       },
