@@ -1,12 +1,15 @@
 {
-  "name": "core",
+  "name": "mn-core",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "core package",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "ts-node src/index.ts"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "MIT",
+  "dependencies": {
+    "utils": "workspace:^1.0.0"
+  }
 }

@@ -1,0 +1,12 @@
+{
+  "name": "mn-utils",
+  "version": "1.0.0",
+  "description": "utils package",
+  "main": "dist/index.js",
+  "scripts": {
+    "tsc": "tsc src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
