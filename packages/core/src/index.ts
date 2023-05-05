@@ -1,7 +1,7 @@
 import { callWithErrorAsyncHandling } from 'mn-utils'
 
 async function TestAsyncFn() {
-  return 'hello testasyncfn'
+  return 'hello test async fn'
 }
 
 export async function main() {
