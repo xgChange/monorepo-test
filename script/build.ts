@@ -47,8 +47,12 @@ async function buildAll(allTarget: string[]) {
 }
 
 async function run() {
-  // await buildAll(allPackagesPath)
-  await buildAll([allPackagesPath[1]])
+  try {
+    await buildAll(allPackagesPath)    
+  } catch (error) {
+    console.log(error)
+  }
+  // await buildAll([allPackagesPath[1]])
   console.log('构建成功')
 }
 
