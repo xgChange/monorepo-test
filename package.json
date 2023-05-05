@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "ts-node ./script/build.ts"
+    "build": "ts-node ./script/build.ts",
+    "changeset": "changeset",
+    "version-packages": "changeset version"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@changesets/cli": "^2.26.1",
     "@types/node": "^18.16.3",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
