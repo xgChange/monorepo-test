@@ -7,18 +7,29 @@ const packagesPath = resolve(__dirname, '..', 'packages')
 
 const allPackagesPath = readdirSync(packagesPath)
 
+let external = [] as string[]
+
 function getPackgeJson(target: string) {
   return require(resolve(packagesPath, target, 'package.json'))
 }
 
 async function buildPackage(target: string) {
   const packageJson = getPackgeJson(target)
+  external = [
+    ...Object.keys(packageJson.dependencies || {}),
+    ...Object.keys(packageJson.peerDependencies || {}),
+  ]
+
+  const buildOption = packageJson.buildOption || {}
+
+  const buildOptionName = buildOption.name || packageJson.name
   return build({
     build: {
       lib: {
         entry: resolve(packagesPath, target, 'src/index.ts'),
       },
       rollupOptions: {
+        external,
         output: [
           {
             format: 'cjs',
@@ -28,13 +39,16 @@ async function buildPackage(target: string) {
           {
             format: 'esm',
             dir: resolve(packagesPath, target, 'dist'),
-            entryFileNames: basename(packageJson.module)
+            entryFileNames: basename(packageJson.module),
           },
           {
             format: 'umd',
             dir: resolve(packagesPath, target, 'dist'),
-            name: packageJson.name,
-            entryFileNames: basename(packageJson.browser)
+            name: buildOptionName,
+            entryFileNames: basename(packageJson.browser),
+            globals: {
+              'mn-utils': buildOptionName,
+            },
           },
         ],
       },
@@ -48,12 +62,11 @@ async function buildAll(allTarget: string[]) {
 
 async function run() {
   try {
-    await buildAll(allPackagesPath)    
+    await buildAll(allPackagesPath)
+    console.log('构建成功')
   } catch (error) {
     console.log(error)
   }
-  // await buildAll([allPackagesPath[1]])
-  console.log('构建成功')
 }
 
 run()

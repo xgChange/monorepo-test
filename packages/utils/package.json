@@ -9,6 +9,9 @@
   "files": [
     "dist"
   ],
+  "buildOption": {
+    "name": "mnUtils"
+  },
   "scripts": {
     "tsc": "tsc src/index.ts"
   },

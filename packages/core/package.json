@@ -9,6 +9,9 @@
   "files": [
     "dist"
   ],
+  "buildOption": {
+    "name": "mnCore"
+  },
   "scripts": {
     "start": "ts-node --esm src/index.ts"
   },
