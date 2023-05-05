@@ -10,16 +10,11 @@ monorepo 测试仓库
 pnpm changeset
 # 1-3 提升版本
 pnpm version-packages # changeset version
-# 1-4 发包
-pnpm release # pnpm build && pnpm changeset publish --registry=...
-# 1-5 得到 1.0.0-beta.1
+# 1-4 git add .
+# 1-5 git commit -m ""
+# 1-6 git push
 
-# 2-1 进行了一些开发...
-# 2-2 提交变更集
-pnpm changeset
-# 2-3 提升版本
-pnpm version-packages
-# 2-4 发包
-pnpm release
-# 2-5 得到 1.0.0-beta.2
+# 1-7 走 ci
+# 1-8 ci 里面执行 npm release 
+# 1-9 release 里面会进行 build + publish
 ```
