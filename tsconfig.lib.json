@@ -3,7 +3,7 @@
   "compilerOptions": {
     "types": ["node"],
     "paths": {
-      "mn-*": ["packages/*/src"]
+      "mn-*": ["packages/*/src"],
     }
   },
   "include": ["packages/*/src"],

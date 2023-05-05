@@ -10,13 +10,13 @@
     <script type="importmap">
       {
         "imports": {
-          "mn-utils": "../utils/dist/index.esm.js"
+          "mn-toolset": "../toolset/dist/index.esm.js"
         }
       }
     </script>
 
     <script type="module">
-      import { callWithErrorAsyncHandling } from 'mn-utils'
+      import { callWithErrorAsyncHandling } from 'mn-toolset'
       import { main } from './dist/index.esm.js'
       console.log(callWithErrorAsyncHandling, main)
       main()

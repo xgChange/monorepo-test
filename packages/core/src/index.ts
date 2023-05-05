@@ -1,4 +1,4 @@
-import { callWithErrorAsyncHandling } from 'mn-utils'
+import { callWithErrorAsyncHandling } from 'mn-toolset'
 
 async function TestAsyncFn() {
   return 'hello test async fn'

@@ -1,6 +1,6 @@
 {
-  "name": "mn-utils",
-  "version": "1.0.0",
+  "name": "mn-toolset",
+  "version": "2.1.0",
   "description": "utils package",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
@@ -10,7 +10,7 @@
     "dist"
   ],
   "buildOption": {
-    "name": "mnUtils"
+    "name": "mnToolset"
   },
   "scripts": {
     "tsc": "tsc src/index.ts"

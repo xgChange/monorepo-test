@@ -19,9 +19,9 @@ importers:
 
   packages/core:
     specifiers:
-      mn-utils: workspace:^1.0.0
+      mn-toolset: workspace:^1.0.0
     dependencies:
-      mn-utils: link:../utils
+      mn-toolset: link:../utils
 
   packages/utils:
     specifiers: {}
