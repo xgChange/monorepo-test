@@ -1,5 +1,11 @@
 # mn-core
 
+## 2.2.3
+
+### Patch Changes
+
+- add comment
+
 ## 2.2.2
 
 ### Patch Changes
