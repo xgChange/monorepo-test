@@ -19,6 +19,12 @@ importers:
       ts-node: 10.9.1_tz4znfsbt2bp6kjvaww33rryty
       typescript: 5.0.4
 
+  packages/business:
+    specifiers:
+      mn-toolset: workspace:^2.2.5
+    dependencies:
+      mn-toolset: link:../toolset
+
   packages/core:
     specifiers:
       mn-toolset: workspace:^2.2.5
