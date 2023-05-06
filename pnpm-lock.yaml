@@ -21,11 +21,11 @@ importers:
 
   packages/core:
     specifiers:
-      mn-toolset: workspace:^1.0.0
+      mn-toolset: workspace:^2.2.5
     dependencies:
-      mn-toolset: link:../utils
+      mn-toolset: link:../toolset
 
-  packages/utils:
+  packages/toolset:
     specifiers: {}
 
 packages:
