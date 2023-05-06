@@ -8,6 +8,10 @@ on:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
+env:
+  CI: true
+  PNPM_CACHE_FOLDER: .pnpm-store
+
 permissions:       
   issues: write
   pull-requests: write
@@ -29,6 +33,9 @@ jobs:
 
       - name: install pnpm
         run: npm i pnpm@latest -g
+
+      - name: setup pnpm config
+        run: pnpm config set store-dir $PNPM_CACHE_FOLDER
 
       # 检查缓存
       - name: Cache
