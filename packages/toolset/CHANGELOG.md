@@ -1,5 +1,11 @@
 # mn-toolset
 
+## 2.2.4
+
+### Patch Changes
+
+- add comment
+
 ## 2.2.2
 
 ### Patch Changes
