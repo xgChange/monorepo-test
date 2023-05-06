@@ -1,13 +1,38 @@
 // vite.config.js
-import { resolve, basename } from 'path'
+import { resolve, basename, dirname } from 'path'
 import { readdirSync } from 'fs'
 import { build } from 'vite'
+import { promisify } from 'util'
+import { exec } from 'child_process'
+
+const execa = promisify(exec)
+
+const command = 'git diff --name-status'
 
 const packagesPath = resolve(__dirname, '..', 'packages')
 
 const allPackagesPath = readdirSync(packagesPath)
 
+const packageNameReg = /^packages\/[a-zA-Z]+\/CHANGELOG\.md$/
+
 let external = [] as string[]
+
+function formatDiffList(stdout: string) {
+  return stdout
+    .split('\n')
+    .filter((item) => item)
+    .map((str) => str.split('\t'))
+}
+
+async function getGitDiffMsg() {
+  const { stdout } = await execa(command)
+  const list = formatDiffList(stdout)
+  const listPath = list
+    .map((item: any[]) => item[1])
+    .filter((path) => packageNameReg.test(path))
+    .map((item) => dirname(item).split('/')[1])
+  return listPath.length ? listPath : undefined
+}
 
 function getPackgeJson(target: string) {
   return require(resolve(packagesPath, target, 'package.json'))
@@ -59,7 +84,9 @@ async function buildAll(allTarget: string[]) {
 
 async function run() {
   try {
-    await buildAll(allPackagesPath)
+    const diffMsgPath = await getGitDiffMsg()
+    console.log('构建的包列表', diffMsgPath || allPackagesPath)
+    await buildAll(diffMsgPath || allPackagesPath)
     console.log('构建成功')
   } catch (error) {
     console.log(error)

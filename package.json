@@ -8,7 +8,7 @@
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "pnpm build && pnpm publish",
-    "publish": "changeset publish --registry=https://registry.npmjs.com/"
+    "publish": "changeset publish"
   },
   "keywords": [],
   "author": "",
