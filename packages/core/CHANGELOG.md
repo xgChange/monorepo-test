@@ -1,5 +1,13 @@
 # mn-core
 
+## 2.2.6
+
+### Patch Changes
+
+- [`ebf10be`](https://github.com/xgChange/monorepo-test/commit/ebf10befa878718708d849e3744a74e37358ddf2) Thanks [@xgChange](https://github.com/xgChange)! - add
+
+- [`efc986b`](https://github.com/xgChange/monorepo-test/commit/efc986b227afd725113c92f00d3c22209fd6ddd0) Thanks [@xgChange](https://github.com/xgChange)! - add dynamic build option
+
 ## 2.2.5
 
 ### Patch Changes
