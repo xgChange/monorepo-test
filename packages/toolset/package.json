@@ -1,6 +1,6 @@
 {
   "name": "mn-toolset",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "utils package",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",

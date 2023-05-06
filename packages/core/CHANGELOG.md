@@ -1,5 +1,14 @@
 # mn-core
 
+## 2.2.2
+
+### Patch Changes
+
+- add workflow
+
+- Updated dependencies []:
+  - mn-toolset@2.2.2
+
 ## 2.2.1
 
 ### Patch Changes

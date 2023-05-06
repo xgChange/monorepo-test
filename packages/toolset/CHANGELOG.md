@@ -1,5 +1,11 @@
 # mn-toolset
 
+## 2.2.2
+
+### Patch Changes
+
+- add workflow
+
 ## 2.2.1
 
 ### Patch Changes
