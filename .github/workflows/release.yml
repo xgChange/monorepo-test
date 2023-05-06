@@ -12,10 +12,6 @@ env:
   CI: true
   PNPM_CACHE_FOLDER: .pnpm-store
 
-permissions:       
-  issues: write
-  pull-requests: write
-
 jobs:
   release:
     name: Release
