@@ -21,7 +21,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "18.x"
+          node-version: "16.x"
       
       - name: install pnpm
         run: npm i pnpm@latest -g
@@ -42,7 +42,7 @@ jobs:
           key: ${{runner.OS}}-${{hashFiles('**/pnpm-lock')}}
 
       - name: Install Dependencies
-        run: pnpm i
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build
         run: pnpm run build
