@@ -26,3 +26,7 @@ export const callWithErrorAsyncHandling = async <T extends CommonFnType>(
     handler?.finishedHandling?.()
   }
 }
+
+export function getMsg(msg: string) {
+  return msg
+}
