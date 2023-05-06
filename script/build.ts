@@ -86,8 +86,8 @@ async function run() {
   try {
     const diffMsgPath = await getGitDiffMsg()
     console.log('git diff msg', diffMsgPath)
-    console.log('构建的包列表', diffMsgPath || allPackagesPath)
-    await buildAll(diffMsgPath || allPackagesPath)
+    console.log('构建的包列表', diffMsgPath)
+    await buildAll(diffMsgPath || [])
     console.log('构建成功')
   } catch (error) {
     console.log(error)
