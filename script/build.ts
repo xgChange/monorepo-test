@@ -7,7 +7,7 @@ import { exec } from 'child_process'
 
 const execa = promisify(exec)
 
-const command = 'git diff --name-status'
+const command = 'git diff --name-status HEAD~0 HEAD~1'
 
 const packagesPath = resolve(__dirname, '..', 'packages')
 
