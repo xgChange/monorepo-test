@@ -1,5 +1,11 @@
 # mn-core
 
+## 2.2.7
+
+### Patch Changes
+
+- [`a06b93e`](https://github.com/xgChange/monorepo-test/commit/a06b93edc7dd88df171e9faf7363301ee46fb456) Thanks [@xgChange](https://github.com/xgChange)! - add comment
+
 ## 2.2.6
 
 ### Patch Changes
