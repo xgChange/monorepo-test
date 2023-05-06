@@ -12,6 +12,9 @@ env:
   CI: true
   PNPM_CACHE_FOLDER: .pnpm-store
 
+permissions: read-all|write-all
+
+
 jobs:
   release:
     name: Release
