@@ -1,6 +1,6 @@
 {
   "name": "mn-business",
-  "version": "2.2.14",
+  "version": "2.2.15",
   "description": "business package",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
@@ -19,6 +19,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "mn-toolset": "workspace:^2.2.14"
+    "mn-toolset": "workspace:^2.2.15"
   }
 }
