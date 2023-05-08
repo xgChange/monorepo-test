@@ -1,5 +1,14 @@
 # mn-business
 
+## 2.2.12
+
+### Patch Changes
+
+- [`1881156`](https://github.com/xgChange/monorepo-test/commit/188115637729c6f4893cafd689213b43454ea99b) Thanks [@xgChange](https://github.com/xgChange)! - delete npmrc
+
+- Updated dependencies [[`1881156`](https://github.com/xgChange/monorepo-test/commit/188115637729c6f4893cafd689213b43454ea99b)]:
+  - mn-toolset@2.2.12
+
 ## 2.2.11
 
 ### Patch Changes
