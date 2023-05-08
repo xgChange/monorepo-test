@@ -1,5 +1,14 @@
 # mn-core
 
+## 2.2.14
+
+### Patch Changes
+
+- [`3839e49`](https://github.com/xgChange/monorepo-test/commit/3839e493c0d6379df7a6d3d2d65f74f2be87dffc) Thanks [@xgChange](https://github.com/xgChange)! - sss
+
+- Updated dependencies [[`3839e49`](https://github.com/xgChange/monorepo-test/commit/3839e493c0d6379df7a6d3d2d65f74f2be87dffc)]:
+  - mn-toolset@2.2.14
+
 ## 2.2.13
 
 ### Patch Changes
