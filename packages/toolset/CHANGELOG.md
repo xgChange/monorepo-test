@@ -1,5 +1,11 @@
 # mn-toolset
 
+## 2.2.13
+
+### Patch Changes
+
+- [`0e1f63b`](https://github.com/xgChange/monorepo-test/commit/0e1f63b43f290212221a2d99edff7084cc8cd889) Thanks [@xgChange](https://github.com/xgChange)! - add npmrc
+
 ## 2.2.12
 
 ### Patch Changes
