@@ -39,7 +39,7 @@ jobs:
         with:
           path: |
             **/node_modules
-          key: ${{runner.OS}}-${{hashFiles('**/pnpm-lock.yml')}}
+          key: ${{runner.OS}}-${{hashFiles('**/pnpm-lock.yaml')}}
 
       - name: Install Dependencies
         if: steps.cache-dependencies.outputs.cache-hit != 'true'
