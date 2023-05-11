@@ -7,10 +7,12 @@
     "strict": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "outDir": "./dist",
+    "resolveJsonModule": true,
+    "outDir": "dist",
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "jsx": "preserve",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "rootDir": ".",
   }
 }

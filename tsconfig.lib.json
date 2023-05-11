@@ -2,6 +2,8 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "types": ["node"],
+    "declaration": true,
+    "emitDeclarationOnly": true,
     "paths": {
       "mn-*": ["packages/*/src"],
     }

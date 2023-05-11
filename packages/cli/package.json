@@ -1,0 +1,24 @@
+{
+  "name": "mn-cli",
+  "version": "1.0.0",
+  "description": "monorepo cli by pnpm",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "type": "module",
+  "types": "./dist/cli.d.ts",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "mn-cli": "bin/index.js"
+  },
+  "repository": {
+    "directory": "packages/cli"
+  },
+  "scripts": {
+    "build": "tsc --project ../../tsconfig.lib.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -6,6 +6,7 @@
   "module": "./dist/index.esm.js",
   "browser": "./dist/index.global.js",
   "type": "module",
+  "types": "./dist/toolset.d.ts",
   "files": [
     "dist"
   ],
@@ -13,7 +14,7 @@
     "name": "mnToolset"
   },
   "scripts": {
-    "tsc": "tsc src/index.ts"
+    "tsc": "tsc --project ../../tsconfig.lib.json"
   },
   "keywords": [],
   "author": "",
