@@ -1,5 +1,11 @@
 # mn-toolset
 
+## 2.4.0
+
+### Minor Changes
+
+- [#14](https://github.com/xgChange/monorepo-test/pull/14) [`0711669`](https://github.com/xgChange/monorepo-test/commit/0711669c79648c7f5150131cc025b46e7ec29ea8) Thanks [@xgChange](https://github.com/xgChange)! - modified build script
+
 ## 2.3.0
 
 ### Minor Changes
