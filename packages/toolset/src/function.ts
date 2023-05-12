@@ -1,4 +1,4 @@
-type CommonFnType = (...args: any[]) => any
+export type CommonFnType = (...args: any[]) => any
 
 type HandlerType = Partial<{
   successedHandling: CommonFnType

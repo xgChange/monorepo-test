@@ -10,7 +10,7 @@ const { remove } = require('fs-extra')
 const { build } = require('vite')
 const { promisify } = require('util')
 const { exec } = require('child_process')
-const typescriptPlugin = require('rollup-plugin-typescript2')
+const esbuild = require('rollup-plugin-esbuild').default
 const execa = promisify(exec)
 
 const command = 'git diff --name-status HEAD~0 HEAD~1'
@@ -50,6 +50,21 @@ function getPackgeJson(target) {
   return require(resolve(packagesPath, target, 'package.json'))
 }
 
+// 下划线 转成 小驼峰
+function formatNameToCamelCase(name) {
+  return name.replace(/\-(\w)/g, function (_, letter) {
+    return letter.toUpperCase()
+  })
+}
+
+// 获取 externals 转换成 globals 配置
+function getGlobalExternals(external) {
+  return external.reduce((prev, curr) => {
+    prev[curr] = formatNameToCamelCase(curr)
+    return prev
+  }, {})
+}
+
 async function buildPackage(target) {
   const packageJson = getPackgeJson(target)
 
@@ -69,21 +84,17 @@ async function buildPackage(target) {
           dir: resolve(packagesPath, target, 'dist'),
           name: buildOptionName,
           entryFileNames: basename(packageJson.browser),
+          globals: getGlobalExternals(externalArr),
         },
       ]
     : []
+
   return build({
     plugins: [
       {
-        ...typescriptPlugin({
-          check: true,
-          tsconfig: resolve(__dirname, '../tsconfig.lib.json'),
-          tsconfigOverride: {
-            compilerOptions: {
-              declaration: true,
-              emitDeclarationOnly: true,
-            },
-          },
+        ...esbuild({
+          tsconfig: resolve(__dirname, '..', 'tsconfig.lib.json'),
+          minify: false,
         }),
         enforce: 'pre',
       },
@@ -109,36 +120,17 @@ async function buildPackage(target) {
         ],
       },
     },
-  }).then(async () => {
-    if (packageJson.types) {
-      console.log(`Rolling up type definitions for ${target}...`)
-
-      // build types
-      const { Extractor, ExtractorConfig } = require('@microsoft/api-extractor')
-
-      const extractorConfigPath = resolve(
-        packagesPath,
-        target,
-        `api-extractor.json`
-      )
-      const extractorConfig =
-        ExtractorConfig.loadFileAndPrepare(extractorConfigPath)
-      const extractorResult = Extractor.invoke(extractorConfig, {
-        localBuild: true,
-        showVerboseMessages: true,
-      })
-
-      if (extractorResult.succeeded) {
-        console.log('create types successed')
-      }
-      console.log(`${resolve(packagesPath, target)}/dist/packages`)
-      return remove(`${resolve(packagesPath, target)}/dist/packages`)
-    }
   })
 }
 
 async function buildAll(allTarget) {
-  return Promise.all(allTarget.map((item) => buildPackage(item)))
+  await Promise.all(allTarget.map((item) => buildPackage(item)))
+  const filterTargets = allTarget.filter((item) => {
+    const packageJson = getPackgeJson(item)
+    return packageJson.types
+  })
+  process.env.TARGETS = filterTargets.join(',')
+  await execa('pnpm run build:type')
 }
 
 async function run() {

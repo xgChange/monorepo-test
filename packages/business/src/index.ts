@@ -4,7 +4,7 @@ async function myFn() {
   return '我是 business2'
 }
 
-async function main() {
+export async function main() {
   return await callWithErrorAsyncHandling(myFn, {})
 }
 main()
