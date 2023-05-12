@@ -1,33 +1,25 @@
 // vite.config.js
-// import { resolve, basename, dirname } from 'path'
-// import { readdirSync } from 'fs'
-// import { build } from 'vite'
-// import { promisify } from 'util'
-// import { exec } from 'child_process'
 const { resolve, basename, dirname } = require('path')
-const { readdirSync } = require('fs')
-const { remove } = require('fs-extra')
+const minimist = require('minimist')
+const { readdirSync, existsSync } = require('fs')
 const { build } = require('vite')
 const { promisify } = require('util')
 const { exec } = require('child_process')
 const esbuild = require('rollup-plugin-esbuild').default
 const execa = promisify(exec)
 
+const args = minimist(process.argv.slice(2))
 const command = 'git diff --name-status HEAD~0 HEAD~1'
 
 const packagesPath = resolve(__dirname, '..', 'packages')
-
 const allPackagesPath = readdirSync(packagesPath)
+const speTargets = args._.length ? args._ : allPackagesPath
 
 const packageNameReg = /^packages\/[a-zA-Z]+\/CHANGELOG\.md$/
 
-const buildCommandWhitelist = ['cli']
-
-const buildCommandFn = async (packagename) => {
-  return execa(`pnpm -C packages/${packagename} build`)
-}
-
 let externalArr = []
+
+const buildCommandWhitelist = ['cli']
 
 function formatDiffList(stdout) {
   return stdout
@@ -65,8 +57,16 @@ function getGlobalExternals(external) {
   }, {})
 }
 
+function getFormatOutput(flag, output, placeholder = []) {
+  return flag ? output : placeholder
+}
+
 async function buildPackage(target) {
   const packageJson = getPackgeJson(target)
+
+  if (buildCommandWhitelist.includes(target)) {
+    return execa(`pnpm -C packages/${target} build`)
+  }
 
   externalArr = [
     ...Object.keys(packageJson.dependencies || {}),
@@ -77,17 +77,15 @@ async function buildPackage(target) {
 
   const buildOptionName = buildOption.name
 
-  const iifePackages = buildOptionName
-    ? [
-        {
-          format: 'iife',
-          dir: resolve(packagesPath, target, 'dist'),
-          name: buildOptionName,
-          entryFileNames: basename(packageJson.browser),
-          globals: getGlobalExternals(externalArr),
-        },
-      ]
-    : []
+  const iifePackages = getFormatOutput(buildOptionName, [
+    {
+      format: 'iife',
+      dir: resolve(packagesPath, target, 'dist'),
+      name: buildOptionName,
+      entryFileNames: basename(packageJson.browser || ''),
+      globals: getGlobalExternals(externalArr),
+    },
+  ])
 
   return build({
     plugins: [
@@ -136,7 +134,7 @@ async function buildAll(allTarget) {
 async function run() {
   try {
     // const diffMsgPath = await getGitDiffMsg()
-    const diffMsgPath = allPackagesPath
+    const diffMsgPath = speTargets
     console.log('git diff msg', diffMsgPath)
     console.log('构建的包列表', diffMsgPath)
     await buildAll(diffMsgPath || [])

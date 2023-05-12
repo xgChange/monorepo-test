@@ -9,6 +9,7 @@ importers:
       '@types/node': ^18.16.3
       esbuild: ^0.17.18
       fs-extra: ^11.1.1
+      minimist: ^1.2.8
       rollup: ^3.21.6
       rollup-plugin-dts: ^5.3.0
       rollup-plugin-esbuild: ^5.0.0
@@ -23,6 +24,7 @@ importers:
       '@types/node': 18.16.3
       esbuild: 0.17.18
       fs-extra: 11.1.1
+      minimist: 1.2.8
       rollup: 3.21.6
       rollup-plugin-dts: 5.3.0_ftzaf2e525sntfmnazf5nods6m
       rollup-plugin-esbuild: 5.0.0_xacb5gh53sf5soxo6nqxnsbslu
@@ -36,7 +38,12 @@ importers:
       mn-toolset: link:../toolset
 
   packages/cli:
-    specifiers: {}
+    specifiers:
+      minimist: ^1.2.8
+      typescript: 4.8.4
+    devDependencies:
+      minimist: 1.2.8
+      typescript: 4.8.4
 
   packages/core:
     specifiers:
@@ -1564,6 +1571,10 @@ packages:
       arrify: 1.0.1
       is-plain-obj: 1.1.0
       kind-of: 6.0.3
+    dev: true
+
+  /minimist/1.2.8:
+    resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
     dev: true
 
   /mixme/0.5.9:

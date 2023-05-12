@@ -8,7 +8,6 @@ const targetPackages = targets
   ? packages.filter((pkg) => targets.includes(pkg))
   : packages
 
-console.log(targets)
 module.exports = targetPackages.map((pkg) => ({
   input: `./temp/packages/${pkg}/src/index.d.ts`,
   output: {
