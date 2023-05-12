@@ -10,15 +10,19 @@
     "dist"
   ],
   "bin": {
-    "mn-cli": "bin/index.js"
+    "mn-cli": "./bin/index.js"
   },
   "repository": {
     "directory": "packages/cli"
   },
   "scripts": {
-    "build": "tsc --project ../../tsconfig.lib.json"
+    "build": "tsc --project ./tsconfig.json"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "minimist": "^1.2.8",
+    "typescript": "4.8.4"
+  }
 }
