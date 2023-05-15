@@ -1,5 +1,14 @@
 # mn-business
 
+## 2.4.1
+
+### Patch Changes
+
+- [`75bcbfc`](https://github.com/xgChange/monorepo-test/commit/75bcbfc78722456ab287826a653f819924697124) Thanks [@xgChange](https://github.com/xgChange)! - version
+
+- Updated dependencies [[`75bcbfc`](https://github.com/xgChange/monorepo-test/commit/75bcbfc78722456ab287826a653f819924697124)]:
+  - mn-toolset@2.4.1
+
 ## 2.4.0
 
 ### Minor Changes
