@@ -1,5 +1,11 @@
 # mn-cli
 
+## 2.4.2
+
+### Patch Changes
+
+- [`ad8ede7`](https://github.com/xgChange/monorepo-test/commit/ad8ede709e62457e6c2bb4f0269efb2289415810) Thanks [@xgChange](https://github.com/xgChange)! - modified release.yaml
+
 ## 2.4.1
 
 ### Patch Changes
