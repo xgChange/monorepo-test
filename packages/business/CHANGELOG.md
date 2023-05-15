@@ -1,5 +1,14 @@
 # mn-business
 
+## 2.4.3
+
+### Patch Changes
+
+- [`6d459b1`](https://github.com/xgChange/monorepo-test/commit/6d459b185d77f322b02f10b885c5ca22814e7da7) Thanks [@xgChange](https://github.com/xgChange)! - 测试
+
+- Updated dependencies [[`6d459b1`](https://github.com/xgChange/monorepo-test/commit/6d459b185d77f322b02f10b885c5ca22814e7da7)]:
+  - mn-toolset@2.4.3
+
 ## 2.4.2
 
 ### Patch Changes
