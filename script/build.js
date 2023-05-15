@@ -140,7 +140,8 @@ async function run() {
     await buildAll(diffMsgPath || [])
     console.log('构建成功')
   } catch (error) {
-    console.log('错误', error.message)
+    // console.log('错误', error.message)
+    console.log(error)
   }
 }
 
