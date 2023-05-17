@@ -5,7 +5,7 @@
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
   "browser": "./dist/index.global.js",
-  "types": "./dist/toolset.d.ts",
+  "types": "dist/toolset.d.ts",
   "files": [
     "dist"
   ],

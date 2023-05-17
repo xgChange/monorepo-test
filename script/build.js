@@ -132,17 +132,17 @@ async function buildAll(allTarget) {
 }
 
 async function run() {
-  try {
-    // const diffMsgPath = await getGitDiffMsg()
-    const diffMsgPath = speTargets
-    console.log('git diff msg', diffMsgPath)
-    console.log('构建的包列表', diffMsgPath)
-    await buildAll(diffMsgPath || [])
-    console.log('构建成功')
-  } catch (error) {
-    // console.log('错误', error.message)
-    console.log(error)
-  }
+  let diffMsgPath = speTargets
+  // if (buildCommandWhitelist.length) {
+  //   const filterTargets = speTargets.filter((item) => {
+  //     return !buildCommandWhitelist.includes(item)
+  //   })
+    
+  // }
+  console.log('git diff msg', diffMsgPath)
+  console.log('构建的包列表', diffMsgPath)
+  await buildAll(diffMsgPath || [])
+  console.log('构建成功')
 }
 
 run()

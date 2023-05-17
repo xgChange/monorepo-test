@@ -5,7 +5,7 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "paths": {
-      "<%= pkg.name %>-*": ["packages/*/src"],
+      "<%= pkg.name %>-*": ["packages/*/src/"],
     }
   },
   "include": ["packages/*/src"],

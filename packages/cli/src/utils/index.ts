@@ -57,23 +57,22 @@ export const generateSubIndex = (pkgname: string) => {
 export const generateSubTsConfig = () => {
   const str = `
   {
-    "extends": "../../tsconfig.lib.json",
+    "extends": "../../tsconfig.base.json",
     "compilerOptions": {
       "declaration": true,
       "emitDeclarationOnly": false,
-      "esModuleInterop": true,
       "target": "ES6",
       "module": "commonjs",
+      "baseUrl": "./",
       "outDir": "./dist",
-      "baseUrl": ".",
-      "rootDir": "."
+      "paths": {
+        "mn-*": ["../../packages/*/src/"]
+      }
     },
-    "ts-node": {
-      "esm": true
-    },
-    "include": ["./bin", "./src/"],
+    "include": ["./src", "./bin/"],
     "exclude": ["**/dist", "**/tests", "node_modules/", "script/"]
   }
+
   `
   return str
 }

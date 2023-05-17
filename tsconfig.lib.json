@@ -5,7 +5,7 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "paths": {
-      "mn-*": ["packages/*/src"],
+      "mn-*": ["packages/*/src/"]
     }
   },
   "include": ["packages/*/src"],
