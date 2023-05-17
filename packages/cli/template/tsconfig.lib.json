@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["node"],
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "paths": {
+      "<%= pkg.name %>-*": ["packages/*/src"],
+    }
+  },
+  "include": ["packages/*/src"],
+  "exclude": ["**/dist", "**/tests", "node_modules/", "script/"]
+}

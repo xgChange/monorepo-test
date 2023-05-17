@@ -30,7 +30,7 @@ export class CreateCommad extends AbstractCommand {
           ? args['directory']
           : resolve(process.cwd(), source || '.')
 
-        if (!existsSync(targetDir)) {
+        if (existsSync(targetDir)) {
           clearConsole()
           const prompt = inquirer.createPromptModule()
           const { action } = await prompt([
@@ -53,7 +53,7 @@ export class CreateCommad extends AbstractCommand {
           }
         }
 
-        this.action.handle(source, options)
+        this.action.handle(targetDir, options)
       })
   }
 }

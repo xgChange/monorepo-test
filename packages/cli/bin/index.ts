@@ -1,26 +1,29 @@
 #!/usr/bin/env node
-import { program, Command } from 'commander'
-// import { resolve } from 'path'
-import { CreateAction } from '../src/action'
+import * as commander from 'commander'
+import type { Command } from 'commander/typings'
+const { program } = commander
 
-import { CreateCommad } from '../src'
+import {
+  CreateCommad,
+  GenerateCommand,
+  CreateAction,
+  GenerateAction,
+} from '../src'
 
 import { version } from '../package.json'
 
 function load(program: Command) {
   new CreateCommad(new CreateAction()).load(program)
+
+  new GenerateCommand(new GenerateAction()).load(program)
 }
 
 const main = () => {
   const p = program
-    .version(
-      version,
-      '-v, --version',
-      'output the current version'
-    )
+    .version(version, '-v, --version', 'output the current version')
     .usage('mn-cli <command> [options]')
     .helpOption('-h, --help', 'output usage information')
-  
+
   load(p)
 
   p.parse()

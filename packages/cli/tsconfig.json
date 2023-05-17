@@ -3,11 +3,15 @@
   "compilerOptions": {
     "declaration": true,
     "emitDeclarationOnly": false,
+    "esModuleInterop": true,
     "target": "ES6",
-    "module": "CommonJS",
+    "module": "commonjs",
     "outDir": "./dist",
     "baseUrl": ".",
     "rootDir": "."
+  },
+  "ts-node": {
+    "esm": true
   },
   "include": ["./bin", "./src/"],
   "exclude": ["**/dist", "**/tests", "node_modules/", "script/"]

@@ -2,6 +2,10 @@
 
 monorepo 测试仓库
 
+## mn-cli
+
+> 可以使用命令行创建 monorepo 的项目
+
 ```
 发包步骤
 
