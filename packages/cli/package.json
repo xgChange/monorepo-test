@@ -6,7 +6,8 @@
   "module": "./dist/index.esm.js",
   "types": "./dist/cli.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "template"
   ],
   "bin": {
     "mn-cli": "./dist/bin/index.js"

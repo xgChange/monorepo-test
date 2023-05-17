@@ -20,7 +20,6 @@ export class CreateAction extends AbstractAction {
   prefixPkgName = ''
 
   async handle(ctx: string, options: { name: string; value: string }[]) {
-    console.log('handle', ctx, options)
     const prjName = basename(ctx)
 
     await this.copyTemplate(ctx)

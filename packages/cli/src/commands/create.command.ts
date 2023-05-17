@@ -15,8 +15,6 @@ export class CreateCommad extends AbstractCommand {
       .description('create a new project')
       .option('--directory [directory]', 'specify the directory')
       .action(async (source, args) => {
-        console.log('command', source, args)
-
         const options = Object.keys(args).reduce((cur, next) => {
           const obj = {
             name: next,
