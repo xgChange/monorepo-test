@@ -1,5 +1,11 @@
 # mn-toolset
 
+## 3.0.0
+
+### Major Changes
+
+- [`cf5e095`](https://github.com/xgChange/monorepo-test/commit/cf5e095af621b479663e589783237cff147b2ce7) Thanks [@xgChange](https://github.com/xgChange)! - 完成 mn-cli 的基本实现
+
 ## 2.4.3
 
 ### Patch Changes
