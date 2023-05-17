@@ -4,7 +4,7 @@ import { join, basename } from 'path'
 import { AbstractAction } from './abstract.action'
 import readPkg from 'read-pkg'
 import { copy, readFileSync, writeFile, mkdir, remove } from 'fs-extra'
-import { writeFileTree, invokeFns, generateSubTsConfig, generateSubIndex } from '../utils'
+import { writeFileTree, invokeFns, generateSubTsConfig, generateSubIndex, generateSubScript } from '../utils'
 import { callWithErrorAsyncHandling } from 'mn-toolset'
 import * as inquirer from 'inquirer'
 
@@ -87,6 +87,7 @@ export class CreateAction extends AbstractAction {
         'package.json': JSON.stringify(basePkg, null, 2),
         'src/index.ts': indexTs,
         'tsconfig.json': generateSubTsConfig(),
+        ...generateSubScript(pkgname)
       })
     }
 

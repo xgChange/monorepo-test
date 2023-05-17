@@ -7,6 +7,8 @@ import {
   createReadStream,
 } from 'fs-extra'
 
+import { render } from 'ejs'
+
 export const clearConsole = () => {
   const blank = '\n'.repeat(process.stdout.rows)
   console.log(blank)
@@ -77,3 +79,19 @@ export const generateSubTsConfig = () => {
   return str
 }
 
+export const generateSubScript = (pkgname: string) => {
+  const script: Record<string, string> = {
+    'script/cp.js': `
+    const { copySync, removeSync } = require('fs')
+    const { resolve } = require('path')
+    
+    copySync(resolve(__dirname, '../dist/packages/<%= pkgname %>'), resolve(__dirname, '../dist'))
+    removeSync(resolve(__dirname, '../dist/packages'))
+    `,
+  }
+
+  return Object.keys(script).reduce((cur, next) => {
+    cur[next] = render(script[next], { pkgname })
+    return cur
+  }, {} as any)
+}
