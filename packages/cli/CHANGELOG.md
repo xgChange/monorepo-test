@@ -1,5 +1,14 @@
 # mn-cli
 
+## 3.0.4
+
+### Patch Changes
+
+- [`eae1bcb`](https://github.com/xgChange/monorepo-test/commit/eae1bcb1f045a4dab394df3729bdba4432a34d9f) Thanks [@xgChange](https://github.com/xgChange)! - add subPackage script/cp.js
+
+- Updated dependencies [[`eae1bcb`](https://github.com/xgChange/monorepo-test/commit/eae1bcb1f045a4dab394df3729bdba4432a34d9f)]:
+  - mn-toolset@3.0.4
+
 ## 3.0.3
 
 ### Patch Changes
