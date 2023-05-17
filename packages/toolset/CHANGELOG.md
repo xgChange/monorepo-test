@@ -1,5 +1,11 @@
 # mn-toolset
 
+## 3.0.1
+
+### Patch Changes
+
+- [`b96cc71`](https://github.com/xgChange/monorepo-test/commit/b96cc7143c776ff3dd3326fe0badc0547a1022be) Thanks [@xgChange](https://github.com/xgChange)! - add template
+
 ## 3.0.0
 
 ### Major Changes
