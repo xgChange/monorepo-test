@@ -12,5 +12,5 @@
     }
   },
   "include": ["./src", "./bin/"],
-  "exclude": ["**/dist", "**/tests", "node_modules/", "script/"]
+  "exclude": ["**/dist", "**/tests", "node_modules/", "script/", "template/*"]
 }

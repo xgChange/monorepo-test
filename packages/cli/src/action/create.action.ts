@@ -136,6 +136,7 @@ export class CreateAction extends AbstractAction {
       '@types/node': '^18.16.3',
       typescript: '^4.8.4',
       '@changesets/cli': '^2.26.1',
+      'minimist': '^1.2.8'
     }
     Object.keys(devps).forEach((key) => {
       pkg.devDependencies[key] = devps[key]
