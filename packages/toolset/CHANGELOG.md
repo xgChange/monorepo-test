@@ -1,5 +1,11 @@
 # mn-toolset
 
+## 3.0.7
+
+### Patch Changes
+
+- [`7eeb042`](https://github.com/xgChange/monorepo-test/commit/7eeb042b1cbef6273dabed14963b153b5a11282c) Thanks [@xgChange](https://github.com/xgChange)! - minimist
+
 ## 3.0.6
 
 ### Patch Changes
