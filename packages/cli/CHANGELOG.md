@@ -1,5 +1,14 @@
 # mn-cli
 
+## 3.0.2
+
+### Patch Changes
+
+- [`9da5c77`](https://github.com/xgChange/monorepo-test/commit/9da5c7798297166a5ee6c55490191027767dd652) Thanks [@xgChange](https://github.com/xgChange)! - cp script
+
+- Updated dependencies [[`9da5c77`](https://github.com/xgChange/monorepo-test/commit/9da5c7798297166a5ee6c55490191027767dd652)]:
+  - mn-toolset@3.0.2
+
 ## 3.0.1
 
 ### Patch Changes

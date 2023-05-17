@@ -1,6 +1,6 @@
 {
   "name": "mn-cli",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "monorepo cli by pnpm",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
@@ -33,7 +33,7 @@
     "execa": "^5",
     "fs-extra": "^11.1.1",
     "inquirer": "^8.0.0",
-    "mn-toolset": "workspace:^3.0.1",
+    "mn-toolset": "workspace:^3.0.2",
     "read-pkg": "^5"
   }
 }
