@@ -1,5 +1,14 @@
 # mn-business
 
+## 3.0.6
+
+### Patch Changes
+
+- [`d75228a`](https://github.com/xgChange/monorepo-test/commit/d75228a3144bac427ea7acc81f58173835cdcf8b) Thanks [@xgChange](https://github.com/xgChange)! - url script
+
+- Updated dependencies [[`d75228a`](https://github.com/xgChange/monorepo-test/commit/d75228a3144bac427ea7acc81f58173835cdcf8b)]:
+  - mn-toolset@3.0.6
+
 ## 3.0.5
 
 ### Patch Changes
