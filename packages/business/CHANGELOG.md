@@ -1,5 +1,14 @@
 # mn-business
 
+## 3.0.5
+
+### Patch Changes
+
+- [`5e31338`](https://github.com/xgChange/monorepo-test/commit/5e31338167d10d290e57f5897a87da65bb364c19) Thanks [@xgChange](https://github.com/xgChange)! - fs-extra
+
+- Updated dependencies [[`5e31338`](https://github.com/xgChange/monorepo-test/commit/5e31338167d10d290e57f5897a87da65bb364c19)]:
+  - mn-toolset@3.0.5
+
 ## 3.0.4
 
 ### Patch Changes
