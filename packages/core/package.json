@@ -1,6 +1,6 @@
 {
   "name": "mn-core",
-  "version": "3.0.6",
+  "version": "3.0.7",
   "description": "core package",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
@@ -20,6 +20,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "mn-toolset": "workspace:^3.0.6"
+    "mn-toolset": "workspace:^3.0.7"
   }
 }
