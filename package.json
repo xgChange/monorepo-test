@@ -9,7 +9,8 @@
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "pnpm build && pnpm publish",
-    "publish": "changeset publish"
+    "publish": "changeset publish",
+    "delete": "rimraf ./**/node_modules/"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,7 @@
     "esbuild": "^0.17.18",
     "fs-extra": "^11.1.1",
     "minimist": "^1.2.8",
+    "rimraf": "^5.0.0",
     "rollup": "^3.21.6",
     "rollup-plugin-dts": "^5.3.0",
     "rollup-plugin-esbuild": "^5.0.0",
