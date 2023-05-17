@@ -13,11 +13,14 @@
     "mn-cli": "./dist/bin/index.js"
   },
   "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xgChange/monorepo-test.git",
     "directory": "packages/cli"
   },
   "scripts": {
     "build": "tsc --project ./tsconfig.json && node ./script/cp.js"
   },
+  "homepage": "https://github.com/xgChange/monorepo-test/tree/main/packages/cli",
   "keywords": [],
   "author": "",
   "license": "ISC",

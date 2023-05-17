@@ -78,7 +78,7 @@ export class CreateAction extends AbstractAction {
         name: `${this.prefixPkgName}-${pkgname}`,
         version: '0.1.0',
         scripts: {
-          build: "tsc --project ./tsconfig.json && node ./script/build.js",
+          build: "tsc --project ./tsconfig.json && node ./script/cp.js",
         },
         devDependencies: {
           "fs-extra": "^11.1.1"
