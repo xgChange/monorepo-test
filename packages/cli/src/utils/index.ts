@@ -82,7 +82,7 @@ export const generateSubTsConfig = () => {
 export const generateSubScript = (pkgname: string) => {
   const script: Record<string, string> = {
     'script/cp.js': `
-    const { copySync, removeSync } = require('fs')
+    const { copySync, removeSync } = require('fs-extra')
     const { resolve } = require('path')
     
     copySync(resolve(__dirname, '../dist/packages/<%= pkgname %>'), resolve(__dirname, '../dist'))

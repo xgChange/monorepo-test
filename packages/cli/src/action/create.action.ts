@@ -78,8 +78,11 @@ export class CreateAction extends AbstractAction {
         name: `${this.prefixPkgName}-${pkgname}`,
         version: '0.1.0',
         scripts: {
-          build: "tsc --project ./tsconfig.json",
+          build: "tsc --project ./tsconfig.json && node ./script/build.js",
         },
+        devDependencies: {
+          "fs-extra": "^11.1.1"
+        }
       }
       const indexTs = generateSubIndex(pkgname)
       await mkdir(join(ctx, 'packages', pkgname), { recursive: true })
