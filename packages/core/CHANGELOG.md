@@ -1,5 +1,16 @@
 # mn-core
 
+## 3.0.3
+
+### Patch Changes
+
+- [`f1739c3`](https://github.com/xgChange/monorepo-test/commit/f1739c3d603b878bd9b13e1d885b9cc36f482408) Thanks [@xgChange](https://github.com/xgChange)! - delete
+
+- [`21ff0e0`](https://github.com/xgChange/monorepo-test/commit/21ff0e02c53ef23368aeb977bf39084979e49c66) Thanks [@xgChange](https://github.com/xgChange)! - build script
+
+- Updated dependencies [[`f1739c3`](https://github.com/xgChange/monorepo-test/commit/f1739c3d603b878bd9b13e1d885b9cc36f482408), [`21ff0e0`](https://github.com/xgChange/monorepo-test/commit/21ff0e02c53ef23368aeb977bf39084979e49c66)]:
+  - mn-toolset@3.0.3
+
 ## 3.0.2
 
 ### Patch Changes
