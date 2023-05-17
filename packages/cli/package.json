@@ -16,7 +16,7 @@
     "directory": "packages/cli"
   },
   "scripts": {
-    "build": "tsc --project ./tsconfig.json"
+    "build": "tsc --project ./tsconfig.json && node ./script/cp.js"
   },
   "keywords": [],
   "author": "",
